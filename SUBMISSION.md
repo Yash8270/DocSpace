@@ -18,8 +18,8 @@
 
 ## Live Product & Deployment Information
 
-- **Live Frontend URL**: `<PASTE_DEPLOYED_FRONTEND_URL_HERE>` (Local: `http://localhost:3000`)
-- **Live Backend API URL**: `<PASTE_DEPLOYED_BACKEND_URL_HERE>` (Local: `http://localhost:5000`)
+- **Live Frontend URL**: `https://yash-limbachiya-docspace.vercel.app/` (Local: `http://localhost:3000`)
+- **Live Backend API URL**: `https://docspace-5ivu.onrender.com` (Local: `http://localhost:5000`)
 
 ---
 

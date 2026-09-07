@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String          @id @default(uuid())
+  name      String
+  email     String          @unique
+  createdAt DateTime        @default(now())
+  
+  ownedDocs Document[]      @relation("DocOwner")
+  shares    DocumentShare[]
+}
+
+model Document {
+  id        String          @id @default(uuid())
+  title     String          @default("Untitled Document")
+  content   String          // Stored as JSON string representation of Tiptap content
+  ownerId   String
+  owner     User            @relation("DocOwner", fields: [ownerId], references: [id], onDelete: Cascade)
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+
+  shares    DocumentShare[]
+
+  @@index([ownerId])
+}
+
+model DocumentShare {
+  id         String   @id @default(uuid())
+  documentId String
+  userId     String
+  permission String   // "EDIT" or "VIEW"
+  createdAt  DateTime @default(now())
+
+  document   Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([documentId, userId])
+  @@index([documentId])
+  @@index([userId])
+}

@@ -1,0 +1,10 @@
+Walkthrough Video URL:
+<PASTE FINAL LOOM OR YOUTUBE URL HERE>
+
+Video Agenda Outline (3-5 mins):
+1. Introduction & Overview of DocSpace (0:00 - 0:45)
+2. User Switching & Dashboard (Alice: Owner, Bob: Editor, Charlie: Viewer) (0:45 - 1:30)
+3. Rich Text Editing, Title Renaming & Autosave Persistence (1:30 - 2:30)
+4. File Import (.txt & .md upload to editable document) (2:30 - 3:30)
+5. Multi-User Sharing & Server-side Permission Enforcement (3:30 - 4:30)
+6. Architecture, AI Workflow & Automated Testing (4:30 - 5:00)
